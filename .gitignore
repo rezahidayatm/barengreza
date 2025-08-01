@@ -1,0 +1,26 @@
+# WEB AREA
+
+# build output
+web/dist/
+
+# generated types
+web/.astro/
+
+# dependencies
+web/node_modules/
+
+# logs
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
+web/pnpm-debug.log*
+
+# environment variables
+web/.env
+web/.env.production
+
+# macOS-specific files
+web/.DS_Store
+
+# jetbrains setting folder
+web/.idea/
