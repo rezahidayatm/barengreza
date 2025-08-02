@@ -1,26 +1,47 @@
-# WEB AREA
+# === WEB AREA ===
+# old content archive
+# .archive/
 
 # build output
-web/dist/
+dist/
 
 # generated types
-web/.astro/
+.astro/
 
 # dependencies
-web/node_modules/
+node_modules/
 
 # logs
-web/npm-debug.log*
-web/yarn-debug.log*
-web/yarn-error.log*
-web/pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # environment variables
-web/.env
-web/.env.production
+.env
+.env.production
 
 # macOS-specific files
-web/.DS_Store
+.DS_Store
 
 # jetbrains setting folder
-web/.idea/
+.idea/
+
+# === APPS AREA ===
+# Binaries and object files
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+
+# Visual Studio Code specific files (optional, but recommended)
+.vscode/
+
+# NuGet packages (optional)
+.vs/
+
+# Additional common files to ignore
+*.exe
+*.dll
+*.pdb
+*.suo
