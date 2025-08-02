@@ -8,75 +8,75 @@ namespace Calculator
 		public static void Main(string[] args)
 		{
 			Console.Clear();
-			
-			// Program start here
-            Calculator();
-
-			// Program ends here
-			// Console.ReadLine();
+			RunCalculator();
 		}
 
-		public static void Calculator()
+		public static void RunCalculator()
 		{
             Console.WriteLine("Selamat datang di kalkulator sederhana");
             
-            bool ulang = true;
-            while (ulang) 
+            while (true) 
             {
-                Console.WriteLine("\nSilahkan masukkan input untuk angka pertama");
-                double x = Convert.ToDouble(Console.ReadLine());
+                var num1 = GetNumber("\nSilahkan masukkan input untuk angka pertama:");
+                var op = GetOperator("Silahkan masukkan operator (+, -, *, /):");
+                var num2 = GetNumber("Silahkan masukkan input untuk angka kedua:");
 
-                Console.WriteLine("Silahkan masukkan operator (+, -, *, /)");
-                string? op = Console.ReadLine();
-
-                Console.WriteLine("Silahkan masukkan input untuk angka kedua");
-                double y = Convert.ToDouble(Console.ReadLine());
-
-                double hasil = 0;
-                bool operatorValid = true;
-
-                switch (op)
+                try
                 {
-                    case "+":
-                        hasil = x + y;
-                        break;
-                    case "-":
-                        hasil = x - y;
-                        break;
-                    case "*":
-                        hasil = x * y;
-                        break;
-                    case "/":
-                        if (y != 0)
-                        { 
-                            hasil = x / y;
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Error: Tidak bisa membagi dengan {y}!");
-                            operatorValid = false;
-                        }
-                        break;
-                    default:
-                        Console.WriteLine("Error: Operator tidak valid!");
-                        operatorValid = false;
-                        break;
+                    var result = PerformCalculation(num1, num2, op);
+                    Console.WriteLine($"Hasil dari {num1} {op} {num2} = {result}");
                 }
-            
-                if (operatorValid)
+                catch (DivideByZeroException ex)
                 {
-                    Console.WriteLine($"Hasil dari {x} {op} {y} = {hasil}");
+                    Console.WriteLine($"Error: {ex.Message}");
                 }
 
-                Console.WriteLine("Ulang kalkulator? Y/n");
-                string? ulangiInput = Console.ReadLine();
-                if (ulangiInput != "n")
+                Console.WriteLine("\nUlang kalkulator? (Y/n)");
+                if (Console.ReadLine()?.ToLower() == "n")
                 {
-                    continue;
+                    break;
                 }
-                break;
             }
+        }
+
+        private static double GetNumber(string prompt)
+        {
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                if (double.TryParse(Console.ReadLine(), out var number))
+                {
+                    return number;
+                }
+                Console.WriteLine("Error: Input tidak valid. Silahkan masukkan angka.");
+            }
+        }
+
+        private static string GetOperator(string prompt)
+        {
+            while (true)
+            {
+                Console.WriteLine(prompt);
+                var op = Console.ReadLine();
+                if (op is "+" or "-" or "*" or "/")
+                {
+                    return op;
+                }
+                Console.WriteLine("Error: Operator tidak valid. Gunakan +, -, *, atau /.");
+            }
+        }
+
+        private static double PerformCalculation(double num1, double num2, string op)
+        {
+            return op switch
+            {
+                "+" => num1 + num2,
+                "-" => num1 - num2,
+                "*" => num1 * num2,
+                "/" when num2 != 0 => num1 / num2,
+                "/" when num2 == 0 => throw new DivideByZeroException("Tidak bisa membagi dengan nol."),
+                _ => throw new ArgumentException("Operator tidak valid.", nameof(op))
+            };
         }
     }
 }
-
