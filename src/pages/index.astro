@@ -27,7 +27,7 @@ import Layout from "../layouts/Layout.astro";
         <span>Powered by</span>
         <a href="https://astro.build" target="_blank" rel="noopener noreferrer">
           <img
-            src="https://raw.githubusercontent.com/rezahidayatm/barengreza/refs/heads/main/.archive/template-astro/assets/astro.svg"
+            src="https://raw.githubusercontent.com/rezahidayatm/barengreza/refs/heads/main/.archive/template/src/assets/astro.svg"
             alt="Astro Logo"
           />
         </a>
@@ -46,113 +46,112 @@ import Layout from "../layouts/Layout.astro";
     </footer>
   </div>
 
-	<style>
-		:root {
-			/* Palet warna dasar */
-			--background-color: #f4f7f6;
-			--primary-color: #333;
-			--secondary-color: #666;
-			--accent-color: #007bff;
-			--border-color: #ddd;
-			--footer-bg: #eee;
-		}
+  <style>
+    :root {
+      /* Palet warna dasar */
+      --background-color: #f4f7f6;
+      --primary-color: #333;
+	    --secondary-color: #666;
+	    --accent-color: #007bff;
+	    --border-color: #ddd;
+	    --footer-bg: #eee;
+    }
 
-		/* Reset box-sizing */
-		*,
-		*::before,
-		*::after {
-			box-sizing: border-box;
-		}
+    /* Reset box-sizing */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-		body {
-			margin: 0;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-			line-height: 1.6;
-			background-color: var(--background-color);
-			color: var(--primary-color);
-		}
+    body {
+	    margin: 0;
+	    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	    line-height: 1.6;
+	    background-color: var(--background-color);
+	    color: var(--primary-color);
+    }
 
-		.maintenance-container {
-			display: flex;
-			flex-direction: column;
-			min-height: 100vh;
-			justify-content: center;
-			align-items: center;
-			text-align: center;
-			padding: 2rem;
-			background-image: url("https://raw.githubusercontent.com/rezahidayatm/barengreza/refs/heads/main/.archive/template-astro/assets/background.svg");
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-		}
+    .maintenance-container {
+	    display: flex;
+	    flex-direction: column;
+	    min-height: 100vh;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	    padding: 2rem;
+	    background-image: url("https://raw.githubusercontent.com/rezahidayatm/barengreza/refs/heads/main/.archive/template/src/assets/background.svg");
+	    background-size: cover;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+    }
 
-		.content-wrapper {
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			
-		}
+    .content-wrapper {
+	    flex-grow: 1;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+    }
 
-		.maintenance-title {
-			font-size: 2.5rem;
-			font-weight: 700;
-			color: var(--primary-color);
-			margin-bottom: 0.5rem;
-		}
+    .maintenance-title {
+	    font-size: 2.5rem;
+	    font-weight: 700;
+	    color: var(--primary-color);
+	    margin-bottom: 0.5rem;
+    }
 
-		.maintenance-message {
-			font-size: 1.2rem;
-			color: var(--secondary-color);
-			max-width: 600px;
-		}
+    .maintenance-message {
+	    font-size: 1.2rem;
+	    color: var(--secondary-color);
+	    max-width: 600px;
+    }
 
-		.author-link {
-			display: inline-block;
-			margin-top: 1.5rem;
-			padding: 0.75rem 1.5rem;
-			color: var(--accent-color);
-			text-decoration: none;
-			border: 2px solid var(--accent-color);
-			border-radius: 5px;
-			transition: background-color 0.3s, color 0.3s;
-		}
+    .author-link {
+	    display: inline-block;
+	    margin-top: 1.5rem;
+	    padding: 0.75rem 1.5rem;
+	    color: var(--accent-color);
+	    text-decoration: none;
+	    border: 2px solid var(--accent-color);
+	    border-radius: 5px;
+	    transition: background-color 0.3s, color 0.3s;
+    }
 
-		.author-link:hover,
-		.author-link:focus {
-			background-color: var(--accent-color);
-			color: white;
-		}
+    .author-link:hover,
+    .author-link:focus {
+	    background-color: var(--accent-color);
+	    color: white;
+    }
 
-		.footer-wrapper {
-			margin-top: 2rem;
-			padding-top: 2rem;
-			border-top: 1px solid var(--border-color);
-			font-size: 0.9rem;
-			color: var(--secondary-color);
-			max-width: 800px;
-		}
+    .footer-wrapper {
+	    margin-top: 2rem;
+	    padding-top: 2rem;
+	    border-top: 1px solid var(--border-color);
+	    font-size: 0.9rem;
+	    color: var(--secondary-color);
+	    max-width: 800px;
+    }
 
-		.powered-by {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			gap: 0.5rem;
-			margin-bottom: 1rem;
-		}
+    .powered-by {
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    gap: 0.5rem;
+	    margin-bottom: 1rem;
+    }
 
-		.powered-by img {
-			height: 24px;
-			width: auto;
-			vertical-align: middle;
-		}
+    .powered-by img {
+	    height: 24px;
+	    width: auto;
+	    vertical-align: middle;
+    }
 
-		.licence a {
-			color: var(--secondary-color);
-			text-decoration: underline;
-		}
-	</style>
+    .licence a {
+	    color: var(--secondary-color);
+	    text-decoration: underline;
+    }
+    </style>
 </Layout>
 
